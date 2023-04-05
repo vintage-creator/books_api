@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing</title>
+    <link rel="stylesheet" href="../Files/styles.css" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  </head>
+  <body style="height: 100vh">
+    <nav class="parent-nav">
+      <div class="nav">
+        <div>
+          <a href="/"
+            ><img src="../Files/Images/my-api-logo.png" alt="logo" class="img"
+          /></a>
+        </div>
+        <ul class="ul">
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Documentation</a></li>
+          <li><a href="/" class="home">Pricing</a></li>
+          <li><a href="/">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="pricing-container">
+      <h1 class="pricing" style="padding-bottom: 20px">Pricing plans:</h1>
+      <p class="body-container-p">
+        We offer flexible pricing plans to meet the needs of businesses and
+        developers of all sizes. Choose the plan that's right for you and start
+        consuming API endpoints today.
+      </p>
+      <div id="pricing-box">
+        <div class="pricing-plans">
+          <h3>Free plan</h3>
+          <ul>
+            <li>100 requests per month</li>
+            <li>1 concurrent request at a time</li>
+            <li>Community support</li>
+          </ul>
+        </div>
+        <div class="pricing-plans">
+          <h3>Basic plan</h3>
+          <ul>
+            <li>$10/month</li>
+            <li>10,000 requests per month</li>
+            <li>10 concurrent requests at a time</li>
+            <li>Email support</li>
+          </ul>
+          <button
+            onclick="selectPlan()"
+            style="
+              background-color: rgb(27 17 48);
+              padding: 10px 20px;
+              border-radius: 10px;
+              color: white;
+              border: none;
+              cursor: pointer;
+              font-size: 17px;
+            "
+          >
+            Select plan
+          </button>
+        </div>
+        <div class="pricing-plans">
+          <h3>Premium plan</h3>
+          <ul>
+            <li>$50/month</li>
+            <li>100,000 requests per month</li>
+            <li>100 concurrent requests at a time</li>
+            <li>Priority email support</li>
+          </ul>
+        </div>
+        <div class="pricing-plans">
+          <h3>Enterprise plan</h3>
+          <ul>
+            <li>Custom pricing</li>
+            <li>Unlimited requests</li>
+            <li>Unlimited concurrent requests</li>
+            <li>Dedicated account manager and support team</li>
+          </ul>
+          <button
+            onclick="selectPlan()"
+            style="
+              background-color: rgb(27 17 48);
+              padding: 10px 20px;
+              color: white;
+              border: none;
+              cursor: pointer;
+              border-radius: 10px;
+              font-size: 17px;
+            "
+          >
+            Select plan
+          </button>
+        </div>
+        <div class="pricing-plans">
+          <h3>Additional Features</h3>
+          <ul>
+            <li>
+              Additional concurrent requests: $5/month per concurrent request
+            </li>
+            <li>Additional API endpoints: Contact us for custom pricing</li>
+            <li>SLA availability: Contact us for custom pricing</li>
+          </ul>
+        </div>
+        <div class="pricing-plans">
+          <h1 class="pricing">Frequently Asked Questions:</h1>
+          <br />
+          <h3>What counts as a request?</h3>
+          <p>
+            A request is counted each time you consume an API endpoint. For
+            example, if you make a GET request to retrieve data, that counts as
+            one request. If you make a POST request to update data, that also
+            counts as one request.
+          </p>
+          <h3>What counts as a request?</h3>
+          <p>
+            A request is counted each time you consume an API endpoint. For
+            example, if you make a GET request to retrieve data, that counts as
+            one request. If you make a POST request to update data, that also
+            counts as one request.
+          </p>
+          <h3>What happens if I exceed my monthly request limit?</h3>
+          <p>
+            If you exceed your monthly request limit, your account will be
+            automatically upgraded to the next plan to accommodate the
+            additional requests. You will be charged the prorated amount for the
+            remainder of the billing cycle.
+          </p>
+          <h3>
+            What happens if I exceed my monthly request limit? Can I cancel or
+            change my plan at any time?
+          </h3>
+          <p>
+            Yes, you can cancel or change your plan at any time. Simply log in
+            to your account and select the plan that you want to switch to. Your
+            new plan will take effect immediately, and you will be charged the
+            prorated amount for the remainder of the billing cycle.
+          </p>
+          <h3>Do you offer discounts for annual plans?</h3>
+          <p>
+            Yes, we offer a 20% discount for annual plans. Contact us to learn
+            more about our annual pricing options.<br /><br />
+            <span style="font-weight: 700; padding-bottom: 30px"
+              >If you have any questions or need help selecting a plan, please
+              contact us and we'll be happy to assist you.</span
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-content-flex">
+        <div><a href="/"><img src="../Files/Images/api-logo-2.png" alt="logo" class="img"/></a></div>
+        <div>
+          <h4>Know when new APIs are published</h4>
+          <div class="footer-input-container">
+            <input type="email" placeholder="Enter your email" name="email" class="footer-input"/><span class="footer-span">Go</span>
+            <div class="footer-icons">
+              <div><a href="/">facebook</a></div>
+              <div><a href="/">Twitter</a></div>
+              <div><a href="/">Instagram</a></div>
+              <div><a href="/">Github</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: -30px;font-size: 15px; color:white;">Office: 11 Adekoya Estate off College Road Ogba, Ikeja Lagos.</div><br/>
+      <div>
+       <small> &copy Copyright, 2023 VintageAPI LLC. All rights reserved.</small>
+      </div>
+    </footer>
+
+    <script>
+      function selectPlan() {
+        window.open("./subscribe.html", "_self");
+      }
+    </script>
+    <script src="./api-server.js"></script>
+  </body>
+</html>

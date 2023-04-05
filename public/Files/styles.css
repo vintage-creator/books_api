@@ -1,0 +1,346 @@
+:root {
+  --border-radius: 10px;
+  --margin-left: 40px;
+}
+
+body,
+html {
+  box-sizing: border-box;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.ul {
+  display: flex;
+  list-style: none;
+}
+
+.ul > li {
+  padding-right: 20px;
+  font-size: 17px;
+}
+
+ul > li > a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.parent-nav {
+  position: sticky;
+  top: 0;
+}
+
+.nav {
+  display: flex;
+  padding: 25px;
+  background-color: white;
+  border-bottom: 2px solid rgb(253, 237, 223);
+  justify-content: space-between;
+}
+
+.rest-img {
+  width: 60%;
+  margin-left: var(--margin-left);
+}
+.graph-img {
+  width: 100%;
+}
+.img {
+  width: 35%;
+  margin-top: 8px;
+}
+
+.image-container {
+  background-color: rgba(192, 192, 192, 0.189);
+  border: 2px solid rgba(192, 192, 192, 0.189);
+  border-radius: var(--border-radius);
+  margin-right: 80px;
+  width: 20%;
+}
+.image-container1 {
+  background-color: rgba(192, 192, 192, 0.189);
+  border: 2px solid rgba(192, 192, 192, 0.189);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+  width: 35%;
+}
+
+.hero {
+  background-image: url("./Images/pexels-sabrina-gelbart-249798.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  height: 60vh;
+}
+
+.hero-div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  color: white;
+  background-color: #000000cf;
+  font-weight: 600;
+  width: 80%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  margin: 0 auto;
+}
+
+.section-details h4,
+.section-goal h4,
+.section-about h4 {
+  text-align: center;
+  font-size: 25px;
+}
+
+.section-details {
+  font-size: 22px;
+  margin: 15px 55px;
+}
+.section-details1 {
+  font-size: 22px;
+  width: 95%;
+  margin: 15px auto;
+}
+
+.image-details {
+  display: flex;
+}
+
+.h5-title {
+  text-align: center;
+}
+
+.button {
+  padding: 10px 14px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background-color: rgb(248, 75, 12);
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+}
+
+.section-goal {
+  background-color: rgba(192, 192, 192, 0.189);
+  padding: 40px;
+  margin-top: 40px;
+}
+.section-about {
+  background-color: rgba(192, 192, 192, 0.189);
+  padding: 10px;
+  border-top: 2px solid white;
+}
+
+.title-details {
+  text-align: center;
+  font-size: 25px;
+}
+
+.section-goal > h4,
+p {
+  margin-left: var(--margin-left);
+  text-align: center;
+}
+
+.section-goal p {
+  font-size: 20px;
+}
+.section-about > h4 {
+  margin-left: var(--margin-left);
+  margin-right: var(--margin-left);
+  text-align: center;
+}
+
+.section-about p {
+  font-size: 20px;
+  text-align: left;
+  margin-right: var(--margin-left);
+}
+
+footer {
+  background-color: rgb(27 17 48);
+  color: silver;
+  padding: 50px;
+  font-size: 18px;
+}
+
+footer .img {
+  width: 150px;
+}
+
+.footer-content-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-input {
+  padding: 10px 30px;
+  border-radius: var(--border-radius);
+  border: none;
+  outline: none;
+  width: 50%;
+}
+
+.footer-span {
+  background-color: rgb(248, 75, 12);
+  padding: 6px 15px;
+  border-radius: var(--border-radius);
+  color: white;
+  margin-left: 10px;
+  position: relative;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.footer-icons a {
+  color:white;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.button:hover, .footer-span:hover {
+  color: rgb(248, 75, 12);
+  background-color: white;
+}
+
+.btn-cls:hover {
+  color: rgb(248, 75, 12);
+}
+
+.home {
+  color: rgb(248, 75, 12);
+}
+
+.form-container {
+  background-color: rgb(27 17 48);
+  width: 50%;
+  margin: 20px auto;
+  color: white;
+  padding: 20px;
+  display: flex;
+  height: 70vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.body-container {
+  padding: 8px 0;
+  background-color: rgba(0, 0, 0, 0.456);
+}
+
+.pricing-background {
+  background-image: url("./Images/cat-han-W_5Eakb1598-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:white;
+  padding: 20px 38px;
+  margin: -10px 0;
+  font-size: 20px;
+}
+
+.pricing-container {
+  padding: 8px 0;
+  background-color: silver;
+}
+
+#pricing-box {
+  margin: 25px 40px;
+}
+
+.body-container-p {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form > input {
+  padding: 10px 20px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  width: 85%;
+  margin-top: 20px;
+}
+
+#amount {
+  width: 43%;
+  background-color: silver;
+}
+
+.close {
+  cursor: pointer;
+  margin-left: 35em;
+  width: 30px;
+}
+
+.pricing {
+  padding-top: 30px;
+  text-align: center;
+  color: rgb(248, 75, 12);
+}
+
+.pricing-plans p, .pricing-plans li {
+    text-align: left;
+    margin-left: 0;
+    padding-bottom: 15px;
+    line-height: 30px;
+}
+
+.signup-bg {
+  background-image: url("./Images/api-img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 55vw;
+}
+
+.signup-form {
+  background-color: silver;
+  width:40%;
+  padding: 63px;
+}
+
+.signup-btn {
+  margin: 40px auto;
+  width: 20%;
+}
+
+.form {
+  margin: 0 auto;
+}
+
+.signup-form input {
+  width: 70%;
+}
+
+.signup-form > h1 {
+  text-align: center;
+}
+
+.signup-form label {
+  font-weight: 500;
+}
+
+.signup-flex {
+  display: flex;
+  height: 75vh;
+
+}

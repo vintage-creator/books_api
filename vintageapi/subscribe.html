@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscribe</title>
+    <link rel="stylesheet" href="../Files/styles.css" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  </head>
+  <body>
+    <nav class="parent-nav" style="z-index: 999">
+      <div class="nav">
+        <div>
+          <a href="/"
+            ><img src="../Files/Images/my-api-logo.png" alt="logo" class="img"
+          /></a>
+        </div>
+        <ul class="ul">
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Documentation</a></li>
+          <li><a href="/" class="home">Pricing</a></li>
+          <li><a href="/">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="body-container">
+      <div class="pricing-background" style="height: 100vh">
+        <div>
+          <lottie-player
+            src="https://assets5.lottiefiles.com/packages/lf20_zI9tjKnlQO.json"
+            background="transparent"
+            speed="1"
+            style="width: 200px; margin: 25px auto; height: 150px"
+            loop
+            autoplay
+          ></lottie-player>
+          Thank you for considering our API service. We offer a range of pricing
+          plans to meet the needs of businesses and developers of all sizes. We
+          understand that choosing a pricing plan can be a difficult decision,
+          so we've put together some information to help you make an informed
+          choice.
+        </div>
+        <br />
+        Our pricing plans are designed to offer flexibility and value for money,
+        so you can find the plan that works best for your business. Whether
+        you're just getting started or you have a high-volume application, we
+        have a plan that's right for you.<br /><br />
+        If you're not sure which plan is right for you, please don't hesitate to
+        contact us. Our team of experts can help you choose the plan that's best
+        suited for your needs. We're always here to help and we look forward to
+        working with you.
+        <div style="margin: 30px auto; width: 15%">
+          <button
+            onclick="subscribePlan()"
+            class="button"
+            type="submit"
+            style="cursor: pointer"
+          >
+            Subscribe plan
+          </button>
+        </div>
+      </div>
+      <div class="form-container" style="display: none">
+        <div>
+          <img
+            src="../Files/Images/close-square-bold.svg"
+            alt="close icon"
+            class="close"
+          />
+        </div>
+        <h1>Subscribe to VintageAPI</h1>
+        <form method="post" action="/subscribe">
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            name="email"
+            id="email"
+          /><br />
+          <input
+            type="number"
+            placeholder="Enter your phone number"
+            name="phone"
+            id="phone"
+          /><br />
+          <label for="amount">Amount: $10/mth</label>
+          <input type="number" name="amount" value="10" id="amount" /><br />
+        </form>
+        <br /><br />
+        <button
+          onclick="subscribe()"
+          class="button"
+          type="submit"
+          style="cursor: pointer"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-content-flex">
+        <div><a href="/"><img src="../Files/Images/api-logo-2.png" alt="logo" class="img"/></a></div>
+        <div>
+          <h4>Know when new APIs are published</h4>
+          <div class="footer-input-container">
+            <input type="email" placeholder="Enter your email" name="email" class="footer-input"/><span class="footer-span">Go</span>
+            <div class="footer-icons">
+              <div><a href="/">facebook</a></div>
+              <div><a href="/">Twitter</a></div>
+              <div><a href="/">Instagram</a></div>
+              <div><a href="/">Github</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: -30px;font-size: 15px; color:white;">Office: 11 Adekoya Estate off College Road Ogba, Ikeja Lagos.</div><br/>
+      <div>
+       <small> &copy Copyright, 2023 VintageAPI LLC. All rights reserved.</small>
+      </div>
+    </footer>
+    <script src="./api-server.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+    <script>
+      const formContainer =
+        document.getElementsByClassName("form-container")[0];
+      const pricingBackground =
+        document.getElementsByClassName("pricing-background")[0];
+      const bodyContainer =
+        document.getElementsByClassName("body-container")[0];
+      const close = document.getElementsByClassName("close")[0];
+      
+      close.addEventListener("click", function () {
+        if ((pricingBackground.style.display = "block")) {
+          formContainer.style.display = "none";
+        }
+      });
+
+      const subscribePlan = () => {
+        if ((pricingBackground.style.display = "none")) {
+          formContainer.style.display = "flex";
+        }
+        pricingBackground.style.display = "none";
+      };
+
+      function subscribe() {
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        FlutterwaveCheckout({
+          public_key: "FLWPUBK_TEST-5c8af02ad0fa6bdd71253e41809cdf22-X",
+          tx_ref: Date.now(),
+          amount: 4750,
+          currency: "NGN",
+          payment_options: "card, mobilemoneyghana, ussd",
+          customer: {
+            email: email,
+            phone_number: phone,
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -9,11 +9,11 @@
   </head>
   <nav class="parent-nav">
     <div class="nav">
-      <div><a href="/"><img src="./Files/Images/my-api-logo.png" alt="logo" class="img"/></a> </div>
-      <ul>
+      <div><a href="/"><img src="./Files/Images/my-api-logo.png" alt="logo" class="img"/></a></div>
+      <ul class="ul">
         <li><a href="/" class="home">Home</a> </li>
         <li><a href="/">Documentation</a> </li>
-        <li><a href="/">Pricing</a> </li>
+        <li><a href="./pricing.html">Pricing</a> </li>
         <li><a href="/">Contact</a> </li>
       </ul>
     </div>
@@ -22,7 +22,7 @@
     <div class="hero-div">
       <h1>The most trusted API as-a-service platform</h1>
       <h4>We offer you access to rare and robust data that you need to build your projects.</h4>
-      <button class="button">Get Started</button>
+      <button class="button" onclick="signup()">Get Started</button>
     </div>
   </section>
   <section class="section-details">
@@ -67,9 +67,10 @@
   </section>
   <section class="section-goal">
     <h4>Our goal:</h4>
+    <lottie-player src="https://assets1.lottiefiles.com/private_files/lf30_qheqyawq.json"  background="transparent"  speed="1"  style="width: 150px;margin:-40px auto;padding-left:30px; height: 130px;"  loop autoplay></lottie-player>
     <p>To unlock the power of data with our Rarely Robust APIs.</p>
   </section>
-  <section class="section-about">
+  <section class="section-about"  style="padding-left: 25px;">
       <h4>About us:</h4>
       <p>As an API as-a-service startup, we are focused on delivering high-quality APIs that are unique and powerful. By building REST and GraphQL APIs, we area able to offer a range of services to businesses and developers who need to integrate data and functionality into their applications.<br/><br/>
 
@@ -78,9 +79,31 @@
         Our watchword are 'rare' and 'robust', which suggests that we prioritize quality over quantity. The APIs we offer are well-designed, thoroughly tested, and built with the latest technologies. This means that we provide robust functionality that is difficult to find elsewhere. Additionally, we offer customization options that allow businesses to create APIs that are tailored to their specific needs.</p>
   </section>
   <footer>
+    <div class="footer-content-flex">
+      <div><a href="/"><img src="./Files/Images/api-logo-2.png" alt="logo" class="img"/></a></div>
+      <div>
+        <h4>Know when new APIs are published</h4>
+        <div class="footer-input-container">
+          <input type="email" placeholder="Enter your email" name="email" class="footer-input"/><span class="footer-span">Go</span>
+          <div class="footer-icons">
+            <div><a href="/">facebook</a></div>
+            <div><a href="/">Twitter</a></div>
+            <div><a href="/">Instagram</a></div>
+            <div><a href="/">Github</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: -30px; color:white;font-size: 15px;">Office: 11 Adekoya Estate off College Road Ogba, Ikeja Lagos.</div><br/>
     <div>
      <small> &copy Copyright, 2023 VintageAPI LLC. All rights reserved.</small>
     </div>
   </footer>
+  <script>
+    function signup(){
+      window.open("./signup.html", "_self")
+    }
+  </script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </body>
 </html>

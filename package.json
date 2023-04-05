@@ -12,9 +12,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
+    "flutterwave-node": "^1.2.2",
     "heroku": "^8.0.2",
     "mongoose": "^7.0.3",
+    "nodemailer": "^6.9.1",
     "nodemon": "^2.0.22",
     "reactjs-id": "^1.0.6",
     "yup": "^1.0.2"
