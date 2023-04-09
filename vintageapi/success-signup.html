@@ -9,7 +9,7 @@
   </head>
   <nav class="parent-nav">
     <div class="nav">
-      <div><a href="/"><img src="../Files/Images/my-api-logo.png" alt="logo" class="img"/></a></div>
+      <div><a href="/index.html"><img src="../Files/Images/my-api-logo.png" alt="logo" class="img"/></a></div>
       <ul class="ul">
         <li><img src="./Files/Images/menu-hamburger.svg"  class="homeicon" alt="home icon"/> </li>
         <li><a href="/index.html" class="home">Home</a> </li>
@@ -22,40 +22,15 @@
   <div class="signup-flex">
     <div class="signup-bg"></div>
         <div class="signup-form">
-            <h2>Sign up to access Vintage APIs</h2>
-            <form method="post" action="/signup" class="form">
-                <div><label for="name">Name:</label></div>
-                <input
-                  type="name"
-                  placeholder="Enter your name"
-                  name="name"
-                  id="name"
-                /><br />
-                <label for="email">Email:</label><br/>
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  name="email"
-                  id="email"
-                /><br />
-                <label for="password">Password:</label><br/>
-                <input
-                  type="password"
-                  placeholder="Enter your password"
-                  name="password"
-                  id="password"
-                  class="pwd"
-                /><br />
-              <div  class="signup-btn">
-                <button
-                class="button"
-                type="submit"
-                style="cursor: pointer"
-              >
-                Sign up
-              </button>
-              </div>
-          </form>
+          <div>
+            <img
+              src="../Files/Images/close-square-outline.svg"
+              alt="close icon"
+              onclick="closeSignup()"
+              class="signup-close"
+            />
+          </div>
+            <h2 style="color: green; display:flex;justify-content: center;align-items: center; height:35vh;">Successfully signed up. Check your email for your ID token</h2>
         </div>
   </div>
   <footer>
@@ -80,5 +55,10 @@
     </div>
   </footer>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  </body>
+ <script>
+  function closeSignup(){
+    window.open("./index.html", "_self")
+  }
+ </script>
+</body>
 </html>

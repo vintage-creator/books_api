@@ -8,7 +8,7 @@ const quotaSchema = new mongoose.Schema({
   requestsRemaining: {
     type: Number,
     required: true,
-    default: 2
+    default: 10
   }
 });
 

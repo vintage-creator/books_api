@@ -3,10 +3,12 @@ const mongoose = require("mongoose");
 
 //Define database schema using yup
 const bookSchema = yup.object().shape({
-  name: yup.string().required(),
+  title: yup.string().required(),
   price: yup.number().required(),
   description: yup.string().max(500),
-  image: yup.string().required()
+  cover: yup.string().required(),
+  author: yup.string().required(),
+  genre: yup.string().required()
 })
 
 const mongooseSchema = new mongoose.Schema(bookSchema.fields);

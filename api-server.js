@@ -13,7 +13,7 @@ const flw = new flutterwave(
   'FLWSECK_TEST-4e221b1a615dc9079c1374124d7b9c9a-X',
 );
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 4000
 
 
 
@@ -29,6 +29,12 @@ app.get("/(|index.html)", (req, res)=>{
 });
 app.get("/(|vintageapi/)pricing(|.html)", (req, res)=>{
     res.sendFile(path.join(__dirname, "pricing.html"))
+});
+app.get("/documentation(|.html)", (req, res)=>{
+    res.sendFile(path.join(__dirname, "documentation.html"))
+});
+app.get("/contact(|.html)", (req, res)=>{
+    res.sendFile(path.join(__dirname, "contact.html"))
 });
 app.get("/(|vintageapi/)subscribe(|.html)", (req, res)=>{
     res.sendFile(path.join(__dirname, "vintageapi","subscribe.html"))
@@ -53,7 +59,7 @@ app.post("/signup(|.html)", async (req, res) => {
       const Id = savedUser._id;
       const quota = new Quota({
       userId: Id,
-      requestsRemaining: 2,
+      requestsRemaining: 10,
     });
     await quota.save();
   
@@ -61,23 +67,23 @@ app.post("/signup(|.html)", async (req, res) => {
       const transporter = nodemailer.createTransport({
         service: "outlook",
         auth: {
-          user: "vintageapi@outlook.com",
+          user: "israel_abazie@outlook.com",
           pass: "Cc7817##**",
         },
       });
   
       const mailOptions = {
-        from: "vintageapi@outlook.com",
+        from: "israel_abazie@outlook.com",
         to: req.body.email,
         subject: "Your API key",
-        text: `Your API key is: Bearer ${Id}`,
+        text: `Congratulations ${req.body.name}! your API key is: Bearer ${Id}`,
       };
   
       transporter.sendMail(mailOptions, async (error, info) => {
         if (error) {
           console.log(error);
         } else {
-          res.status(200).json({ message: "User created successfully." });
+          res.status(200).sendFile(path.join(__dirname, "vintageapi", "success-signup.html"))
           console.log("Email sent: " + info.response);
         }
       });
@@ -85,14 +91,18 @@ app.post("/signup(|.html)", async (req, res) => {
     } catch (error) {
       console.log(error);
       if(error.keyPattern.email === 1){
-        return res.status(500).send("Email or password already exist");
+        return res.status(500).sendFile(path.join(__dirname, "vintageapi", "error-signup.html"));
+      } else if(error.code === "ESOCKET" || error.command === "CONN"){
+        return res.status(408).send(error.message);
       }
+      return res.status(500).send(error.message);
     }
   });
   
 
 // HTTP GET REQUEST for API/books route
 app.get('/api/books', async (req, res) => {
+  let idToken;
     try {
     // Extract the user ID from Firebase Authentication token
     const authHeader = req.headers.authorization;
@@ -100,13 +110,13 @@ app.get('/api/books', async (req, res) => {
       return res.status(401).send('Unauthorized');
     }
     
-    const idToken = authHeader.split('Bearer ')[1];
+    idToken = authHeader.split('Bearer ')[1];
 
     // Find or create the user's quota
     const quota = await Quota.findOneAndUpdate(
       { userId: idToken },
       { $inc: { requestsRemaining: -1 } },
-      { new: true, upsert: true }
+       { new: true, upsert: true }
     );
   
       // Check user's quota
@@ -115,14 +125,18 @@ app.get('/api/books', async (req, res) => {
       }
       // Check if the user has exceeded their quota
       if (quota.requestsRemaining <= 0 ||  new Date() > quota.expiryDate) {
-        return res.status(403).send({ message: 'API call limit exceeded. Please subscribe to make more API calls.' });
+        return res.status(402).send({ message: 'API call limit exceeded. Please subscribe to make more API calls.' });
       }
 
-      const user = await User.findById(idToken);
-      if(user){
-        const books = await booksList.find();
-        return res.status(200).json(books);
-      }
+        const user = User.findById(idToken);
+        if (user){
+          const books = await booksList.find();
+          return res.status(200).json(books);
+        } else {
+          return res.status(401).send("Your ID does not match with the one in our database");
+        }
+        
+  
     } catch (error) {
       const name = await User.findById(idToken);
       console.log(error);
@@ -142,6 +156,7 @@ app.get('/api/books', async (req, res) => {
   }
  
   const { status, tx_ref } = payload;
+  console.log(tx_ref)
 
   if (status === 'successful') {
     try {
@@ -207,10 +222,12 @@ app.delete("/api/books/:id", async (req, res)=>{
 app.post("/api/books", async (req, res)=>{
     try {
         const book = await new booksList({
-            name: req.body.name,
+            title: req.body.name,
             price: req.body.price,
             description: req.body.description,
-            image: req.body.image
+            cover: req.body.cover,
+            author: req.body.author,
+            genre: req.body.genre
         })
         const savedbook = await book.save();
         res.status(201).json(savedbook)

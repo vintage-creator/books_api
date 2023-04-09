@@ -12,15 +12,16 @@
     <nav class="parent-nav" style="z-index: 999">
       <div class="nav">
         <div>
-          <a href="/"
+          <a href="/index.html"
             ><img src="../Files/Images/my-api-logo.png" alt="logo" class="img"
           /></a>
         </div>
         <ul class="ul">
-          <li><a href="/">Home</a></li>
-          <li><a href="/">Documentation</a></li>
-          <li><a href="/" class="home">Pricing</a></li>
-          <li><a href="/">Contact</a></li>
+          <li><img src="./Files/Images/menu-hamburger.svg"  class="homeicon" alt="home icon"/> </li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/documentation.html">Documentation</a></li>
+          <li><a href="/pricing.html" class="home">Pricing</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -85,9 +86,8 @@
           /><br />
           <label for="amount">Amount: $10/mth</label>
           <input type="number" name="amount" value="10" id="amount" /><br />
-        </form>
-        <br /><br />
-        <button
+          <div style="margin: 50px auto; width: 28%" class="subscribe-div">
+            <button
           onclick="subscribe()"
           class="button"
           type="submit"
@@ -95,6 +95,10 @@
         >
           Continue
         </button>
+          </div>
+        </form>
+        
+        
       </div>
     </div>
     <footer>
@@ -113,8 +117,8 @@
           </div>
         </div>
       </div>
-      <div style="margin-top: -30px;font-size: 15px; color:white;">Office: 11 Adekoya Estate off College Road Ogba, Ikeja Lagos.</div><br/>
-      <div>
+      <div style="margin-top: -30px;font-size: 15px; color:white;"  class="footer-add">Office: 11 Adekoya Estate off College Road Ogba, Ikeja Lagos.</div><br/>
+      <div class="small">
        <small> &copy Copyright, 2023 VintageAPI LLC. All rights reserved.</small>
       </div>
     </footer>
@@ -132,7 +136,7 @@
       
       close.addEventListener("click", function () {
         if ((pricingBackground.style.display = "block")) {
-          formContainer.style.display = "none";
+          return formContainer.style.display = "none";
         }
       });
 

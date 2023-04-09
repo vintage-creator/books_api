@@ -23,6 +23,12 @@ html {
   font-size: 17px;
 }
 
+.homeicon{
+  width: 30px;
+  font-size: 20px;
+  display: none;
+}
+
 ul > li > a {
   color: black;
   text-decoration: none;
@@ -69,6 +75,25 @@ ul > li > a {
   flex-direction: column;
   margin: 0 20px;
   width: 35%;
+}
+.image-container1-step {
+  border: 2px solid rgba(192, 192, 192, 0.189);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+  width: 35%;
+  box-shadow: 1px 2px 1px rgba(192, 192, 192, 0.189);
+}
+
+.image-container1-step img {
+  width: 80px;
+}
+.image-container1-step p {
+  font-size: 21px;
+  margin-left: unset;
+  margin: 0 auto;
+  padding: 40px 0;
 }
 
 .hero {
@@ -118,6 +143,10 @@ ul > li > a {
 
 .h5-title {
   text-align: center;
+}
+.h5-title-step {
+  text-align: center;
+  font-size: 25px;
 }
 
 .button {
@@ -291,11 +320,15 @@ form > input {
   margin-left: 35em;
   width: 30px;
 }
+.signup-close {
+  cursor: pointer;
+  margin-left: 33em;
+  width: 30px;
+}
 
 .pricing {
   padding-top: 30px;
   text-align: center;
-  color: rgb(248, 75, 12);
 }
 
 .pricing-plans p, .pricing-plans li {
@@ -303,6 +336,14 @@ form > input {
     margin-left: 0;
     padding-bottom: 15px;
     line-height: 30px;
+}
+
+.pricing-plans h3 {
+  color: rgb(248, 75, 12);
+}
+
+.pricing-h3 {
+  color: unset!important;
 }
 
 .signup-bg {
@@ -319,7 +360,7 @@ form > input {
 }
 
 .signup-btn {
-  margin: 40px auto;
+  margin: 20px auto;
   width: 20%;
 }
 
@@ -327,20 +368,212 @@ form > input {
   margin: 0 auto;
 }
 
+
 .signup-form input {
-  width: 70%;
+  width: 67.5%;
+  margin: 5px 65px 20px;
 }
 
-.signup-form > h1 {
+.signup-form > h2 {
   text-align: center;
 }
 
 .signup-form label {
   font-weight: 500;
+ margin-left: 65px;
+  
 }
 
 .signup-flex {
   display: flex;
   height: 75vh;
 
+}
+
+.doc p  {
+  font-size: 18px;
+  text-align: unset;
+  margin-left: unset;
+}
+
+.footer-add {
+  font-size: 15px;
+}
+
+                                /* CSS Media Queries */
+@media (max-width:1241px) {
+  .signup-form button {
+    width: 120%;
+   }
+}                                
+@media (max-width:1054px) {
+  .hero-div h4 {
+    font-size: 18px;
+  }
+  .image-container1-step p {
+    font-size: 16px;
+  }
+  .image-container1-step img {
+    width: 50px;
+  }
+  .signup-form {
+    width:50% ;
+   }
+
+   .footer-add {
+    font-size: 15px;
+    width:40%;
+   }
+}
+
+@media (max-width:948px) {
+  .hero-div h1 {
+    font-size: 30px;
+  }
+  .signup-form h2 {
+   font-size:23px ;
+  }
+ 
+  .signup-form {
+    width:53% ;
+   }
+   .footer-icons {
+    margin-top: 35px;
+   }
+   .signup-btn {
+    width: 64%;
+    margin-right: 70px;
+  }
+}
+
+@media (max-width:900px) {
+  .footer-add {
+    width: 35%;
+  }
+  .small {
+    margin: 30px auto 0;
+    width: 55%;
+    padding: 20px;
+  }
+  .hero-div {
+    width: 95%;
+    padding:5px;
+  }
+  .form {
+    margin-left: -13%;
+    padding-top: 5%;
+  }
+  .signup-form input {
+    width: 72%;
+  }
+  .signup-btn {
+    width: 66.5%;
+    margin-right: 72px;
+  }
+  .body-container-p {
+    font-size: 18px;
+    line-height: 28px;
+    width: 93.6%;
+  }
+  .image-container {
+    width:43.5vw;
+    margin-left: 8.5%;
+  }
+  .image-details1 {
+    width: 92vw;
+    flex-wrap: wrap;
+    /* padding-left: 10%; */
+   
+  }
+  .image-container1, .image-container1-step {
+    margin-bottom: 5%;
+    margin-left: 10%;
+  }
+ 
+}
+
+@media (max-width:831px) {
+  .signup-btn {
+    width: 66.5%;
+    margin-right: 62px;
+  }
+  .footer-add {
+    line-height: 20px;
+    color: silver!important;
+  }
+  .h5-title {
+    font-size: 15px;
+  }
+  nav .img {
+    width:40%;
+  }
+  .hero h4 {
+    text-align: left;
+    margin-left: 5%;
+    line-height: 22px;
+  }
+}
+
+@media (max-width:823px) {
+  .small {
+    width:60%;
+  }
+  .hero-div h1 {
+    font-size: 28px;
+  }
+  .hero h4 {
+    width:90%;
+  }
+  .title-details, h4 {
+    font-size: 22px!important;
+  }
+  footer h4, .hero h4{
+    font-size: 18px!important;
+  }
+  .pricing, .header-title {
+    font-size: 28px!important;
+  }
+  nav .img {
+    width:45%;
+  }
+  .signup-btn {
+    margin-left: 20%;
+  }
+}
+
+@media (max-width:760px) {
+  .small {
+    width:65%;
+  }
+}
+@media (max-width:712px) {
+  .small {
+    width:70%;
+  }
+  .homeicon {
+    display: block;
+    margin-left: 80%;
+    cursor: pointer;
+  }
+  .ul {
+    border-top: 1px solid silver;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 20px;
+
+  }
+  .ul li {
+    margin: 80px auto 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    width: 40%;
+    text-align: center;
+  }
+  .nav {
+    flex-direction: column;
+  }
+  nav .img {
+    width: 30%;
+  }
 }

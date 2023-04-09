@@ -9,7 +9,7 @@
   </head>
   <nav class="parent-nav">
     <div class="nav">
-      <div><a href="/"><img src="../Files/Images/my-api-logo.png" alt="logo" class="img"/></a></div>
+      <div><a href="/index.html"><img src="../Files/Images/my-api-logo.png" alt="logo" class="img"/></a></div>
       <ul class="ul">
         <li><img src="./Files/Images/menu-hamburger.svg"  class="homeicon" alt="home icon"/> </li>
         <li><a href="/index.html" class="home">Home</a> </li>
@@ -24,21 +24,22 @@
         <div class="signup-form">
             <h2>Sign up to access Vintage APIs</h2>
             <form method="post" action="/signup" class="form">
-                <div><label for="name">Name:</label></div>
+                <label for="name">Name:</label>
                 <input
                   type="name"
                   placeholder="Enter your name"
                   name="name"
                   id="name"
                 /><br />
-                <label for="email">Email:</label><br/>
-                <input
+                <label for="email">Email:</label>
+                <input style="margin-bottom: unset;"
                   type="email"
                   placeholder="Enter your email address"
                   name="email"
                   id="email"
-                /><br />
-                <label for="password">Password:</label><br/>
+                />
+                <small style="color:red; margin-left:68px;">Email or password already exists</small><br/>
+                <div  style="margin-top: 20px"><label for="phone">Password:</label></div>
                 <input
                   type="password"
                   placeholder="Enter your password"
@@ -55,7 +56,7 @@
                 Sign up
               </button>
               </div>
-          </form>
+            </form>
         </div>
   </div>
   <footer>

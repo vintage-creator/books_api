@@ -6,26 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pricing</title>
     <link rel="stylesheet" href="../Files/styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
   </head>
   <body style="height: 100vh">
     <nav class="parent-nav">
       <div class="nav">
         <div>
-          <a href="/"
+          <a href="/index.html"
             ><img src="../Files/Images/my-api-logo.png" alt="logo" class="img"
           /></a>
         </div>
         <ul class="ul">
-          <li><a href="/">Home</a></li>
-          <li><a href="/">Documentation</a></li>
-          <li><a href="/" class="home">Pricing</a></li>
-          <li><a href="/">Contact</a></li>
+          <li><img src="./Files/Images/menu-hamburger.svg"  class="homeicon" alt="home icon"/> </li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/documentation.html">Documentation</a></li>
+          <li><a href="/pricing.html" class="home">Pricing</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
     </nav>
     <div class="pricing-container">
-      <h1 class="pricing" style="padding-bottom: 20px">Pricing plans:</h1>
+      <h1 class="pricing" style="padding-bottom: 20px">Pricing plans:</h1><hr/>
       <p class="body-container-p">
         We offer flexible pricing plans to meet the needs of businesses and
         developers of all sizes. Choose the plan that's right for you and start
@@ -63,7 +65,7 @@
             Select plan
           </button>
         </div>
-        <div class="pricing-plans">
+        <div class="pricing-plans"  data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
           <h3>Premium plan</h3>
           <ul>
             <li>$50/month</li>
@@ -72,7 +74,7 @@
             <li>Priority email support</li>
           </ul>
         </div>
-        <div class="pricing-plans">
+        <div class="pricing-plans"  data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
           <h3>Enterprise plan</h3>
           <ul>
             <li>Custom pricing</li>
@@ -95,7 +97,7 @@
             Select plan
           </button>
         </div>
-        <div class="pricing-plans">
+        <div class="pricing-plans"  data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
           <h3>Additional Features</h3>
           <ul>
             <li>
@@ -105,31 +107,24 @@
             <li>SLA availability: Contact us for custom pricing</li>
           </ul>
         </div>
-        <div class="pricing-plans">
+        <div class="pricing-plans"  data-aos="fade-up" data-aos-delay="50" data-aos-duration="1000">
           <h1 class="pricing">Frequently Asked Questions:</h1>
           <br />
-          <h3>What counts as a request?</h3>
+          <h3 class="pricing-h3">What counts as a request?</h3>
           <p>
             A request is counted each time you consume an API endpoint. For
             example, if you make a GET request to retrieve data, that counts as
             one request. If you make a POST request to update data, that also
             counts as one request.
           </p>
-          <h3>What counts as a request?</h3>
-          <p>
-            A request is counted each time you consume an API endpoint. For
-            example, if you make a GET request to retrieve data, that counts as
-            one request. If you make a POST request to update data, that also
-            counts as one request.
-          </p>
-          <h3>What happens if I exceed my monthly request limit?</h3>
+          <h3 class="pricing-h3">What happens if I exceed my monthly request limit?</h3>
           <p>
             If you exceed your monthly request limit, your account will be
             automatically upgraded to the next plan to accommodate the
             additional requests. You will be charged the prorated amount for the
             remainder of the billing cycle.
           </p>
-          <h3>
+          <h3  class="pricing-h3">
             What happens if I exceed my monthly request limit? Can I cancel or
             change my plan at any time?
           </h3>
@@ -139,7 +134,7 @@
             new plan will take effect immediately, and you will be charged the
             prorated amount for the remainder of the billing cycle.
           </p>
-          <h3>Do you offer discounts for annual plans?</h3>
+          <h3  class="pricing-h3">Do you offer discounts for annual plans?</h3>
           <p>
             Yes, we offer a 20% discount for annual plans. Contact us to learn
             more about our annual pricing options.<br /><br />
@@ -167,8 +162,8 @@
           </div>
         </div>
       </div>
-      <div style="margin-top: -30px;font-size: 15px; color:white;">Office: 11 Adekoya Estate off College Road Ogba, Ikeja Lagos.</div><br/>
-      <div>
+      <div style="margin-top: -30px;font-size: 15px; color:white;" class="footer-add">Office: 11 Adekoya Estate off College Road Ogba, Ikeja Lagos.</div><br/>
+      <div  class="small">
        <small> &copy Copyright, 2023 VintageAPI LLC. All rights reserved.</small>
       </div>
     </footer>
@@ -178,6 +173,9 @@
         window.open("./subscribe.html", "_self");
       }
     </script>
-    <script src="./api-server.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

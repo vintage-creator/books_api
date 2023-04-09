@@ -1,27 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Documentation</title>
-    <link rel="stylesheet" href="./Files/styles.css"/>
-</head>
-<body>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Files/styles.css" />
+  </head>
+  <body>
     <nav class="parent-nav">
-        <div class="nav">
-          <div><a href="/"><img src="./Files/Images/my-api-logo.png" alt="logo" class="img"/></a> </div>
-          <ul>
-            <li><a href="/" class="home">Home</a> </li>
-            <li><a href="/">Documentation</a> </li>
-            <li><a href="/">Pricing</a> </li>
-            <li><a href="/">Contact</a> </li>
-          </ul>
+      <div class="nav">
+        <div>
+          <a href="/"
+            ><img src="./Files/Images/my-api-logo.png" alt="logo" class="img"
+          /></a>
         </div>
-      </nav>
-      <section>
-        <h1>Documentation</h1>
-        <h3>How to make use of our APIs</h3>
-      </section>
-</body>
+        <ul class="ul">
+          <li><img src="./Files/Images/menu-hamburger.svg"  class="homeicon" alt="home icon"/> </li>
+          <li><a href="/index.html" >Home</a></li>
+          <li><a href="documentation.html" class="home">Documentation</a></li>
+          <li><a href="/pricing.html">Pricing</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section>
+      <h1 style="text-align: center;padding-top: 20px; font-size: 32px; width:95%" class="header-title">Documentation: Accessing our endpoints</h1>
+<div style="background-color: silver;margin: 20px 0 0; padding: 50px;">
+  <h2>VintageAPI template guide</h2><hr/>
+  <div class="doc">
+    <P>In your code editor, write the following and insert your ID Token and the requested endpoint.</P>
+    <p>const userId = "Insert your ID Token";</p>
+    <p> const url = "Insert Endpoint (URL)";</p>
+     <p>const options = {</p>
+      <p>headers: {</p>
+        Authorization: `Bearer ${userId}`,<br/> 
+      &nbsp;&nbsp;},<br/>
+    <p> }; </p>
+    <p>const app = async () => {</p>
+      <p>const res = await fetch(url, options);</p>
+      <p>const data = await res.json();</p>
+      <p>console.log(data);</p> 
+    };<br/> 
+    <p>app();</p>
+  </div>
+</div>
+    </section>
+    <footer>
+      <div class="footer-content-flex">
+        <div><a href="/"><img src="../Files/Images/api-logo-2.png" alt="logo" class="img"/></a></div>
+        <div>
+          <h4>Know when new APIs are published</h4>
+          <div class="footer-input-container">
+            <input type="email" placeholder="Enter your email" name="email" class="footer-input"/><span class="footer-span">Go</span>
+            <div class="footer-icons">
+              <div><a href="/">facebook</a></div>
+              <div><a href="/">Twitter</a></div>
+              <div><a href="/">Instagram</a></div>
+              <div><a href="/">Github</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: -30px;font-size: 15px; color:white;" class="footer-add">Office: 11 Adekoya Estate off College Road Ogba, Ikeja Lagos.</div><br/>
+      <div  class="small">
+       <small> &copy Copyright, 2023 VintageAPI LLC. All rights reserved.</small>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>
